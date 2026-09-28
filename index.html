@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>Recommendation Model Graphs</title>
+  <style>
+    :root{
+      --bg:#f5f7f8;--card:#fff;--text:#16313d;--muted:#667982;--line:#d9e1e4;--accent:#255f7a;
+    }
+    @media (prefers-color-scheme:dark){
+      :root{--bg:#0f171b;--card:#172126;--text:#e8f0f2;--muted:#9fb0b7;--line:#2b3b42;--accent:#7fb6ce}
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif}
+    main{max-width:1080px;margin:0 auto;padding:72px 24px}
+    .eyebrow{font-size:12px;letter-spacing:.14em;color:var(--muted);text-transform:uppercase}
+    h1{font-size:42px;line-height:1.1;margin:12px 0 14px}
+    .intro{max-width:760px;color:var(--muted);font-size:16px;line-height:1.8}
+    .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;margin-top:42px}
+    .card{display:block;text-decoration:none;color:inherit;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:28px;transition:.18s ease;min-height:240px}
+    .card:hover{transform:translateY(-3px);border-color:var(--accent);box-shadow:0 14px 34px rgba(22,49,61,.10)}
+    .tag{font-size:12px;color:var(--accent);font-weight:700;letter-spacing:.05em}
+    h2{font-size:25px;margin:15px 0 12px}
+    .desc{color:var(--muted);line-height:1.75;font-size:14px}
+    .open{margin-top:24px;font-size:14px;font-weight:700;color:var(--accent)}
+    footer{margin-top:38px;color:var(--muted);font-size:12px}
+    @media(max-width:760px){h1{font-size:34px}.grid{grid-template-columns:1fr}main{padding-top:46px}}
+  </style>
+</head>
+<body>
+<main>
+  <div class="eyebrow">Recommendation Systems · Model Graphs</div>
+  <h1>模型架构展示</h1>
+  <p class="intro">两个自包含的交互式静态页面，分别展示激励场景兴趣去偏与长期价值 GRPO 排序的模型结构、训练信号和在线推理链路。</p>
+
+  <section class="grid">
+    <a class="card" href="./decoin_lv_integrated_architecture.html">
+      <div class="tag">DECOIN / CAUSAL DEBIASING</div>
+      <h2>Decoin 长播兴趣排序</h2>
+      <div class="desc">围绕真实兴趣与激励增益解耦，展示 Teacher、Interest/Growth 分支、置信度建模，以及 PSRG / PCRG / 域条件化等结构。</div>
+      <div class="open">打开架构页 →</div>
+    </a>
+
+    <a class="card" href="./session_hive_grpo_single_page.html">
+      <div class="tag">GRPO / LONG-TERM VALUE</div>
+      <h2>Session–Hive GRPO</h2>
+      <div class="desc">展示 Session 实时曝光流与 Hive 延迟反馈流，以及 Policy / Reference / Reward 三塔、组内相对优势、KL 约束和在线推理。</div>
+      <div class="open">打开架构页 →</div>
+    </a>
+  </section>
+
+  <footer>Static HTML · GitHub Pages ready</footer>
+</main>
+</body>
+</html>
